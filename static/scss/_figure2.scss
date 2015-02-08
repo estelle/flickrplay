@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row-reverse  wrap-reverse;
+  margin: 10px;
+}
+
+figure {
+  padding: 5px;
+  text-align: center;
+  margin: 0 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  align-items: stretch;
+  display: flex;
+}
