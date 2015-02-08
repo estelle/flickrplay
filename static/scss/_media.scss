@@ -1,0 +1,26 @@
+@media screen and (max-width: 1600px) {
+      figure {
+        height: auto;
+        width: 25%;
+      }
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+   @media screen and (max-width: 1200px) {
+      figure {
+        width: 33%;
+      }
+    }
+   @media screen and (max-width: 800px) {
+      figure {
+        width: 50%;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      img, figure {
+        height: auto;
+        width: 100%;
+      }
+    }

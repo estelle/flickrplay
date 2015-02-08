@@ -1,0 +1,24 @@
+figure {
+  padding: 5px;
+  text-align: center;
+  margin: 0 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+}
+figcaption {
+  padding: 5px;
+  margin: auto;
+  width: 200px;
+  font-family: tahoma, trebuchet, trebuchet MS,  helvetica, arial, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+img {
+  height: 250px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+}
