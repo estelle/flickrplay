@@ -50,7 +50,7 @@ var flickr =  {
       photo.farm + '.static.flickr.com/' +
       photo.server + '/' +
       photo.id + '_' +
-      photo.secret + '.jpg)" src="static/assets/trans.gif" alt="' +
+      photo.secret + '_n.jpg)" src="static/assets/trans.gif" alt="' +
       photo.title + '" /><figcaption>' +
       photo.title + '</figcaption></figure>';
   }
