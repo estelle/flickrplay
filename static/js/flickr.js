@@ -1,12 +1,13 @@
 var flickr =  {
   init : function () {
+    // event handler for submit
     document.getElementById('submit').addEventListener('click', function (e) {
-      console.log('bar');
       flickr.flickrSearch();
       return false;
     });
   },
 
+  // AJAX Request
   flickrSearch : function () {
     var flickrResponse = new XMLHttpRequest(),
     searchTerm = document.getElementById('search').value,
@@ -21,34 +22,37 @@ var flickr =  {
     }
   },
 
+  // AJAX Handler
   processResponse : function (e) {
     if(e.target.readyState === 4 && e.target.status===200) {
         //flickr server response
         var response = e.target.response;
         eval(response);
-        //parse response
-
     }
   },
 
+  // handle data layout the page
   jsonFlickrApi: function (data) {
     var photos = data.photos.photo,
         i = 0, count = photos.length,
         html = '';
-        console.log(count);
 
     for(; i < count; i++) {
-      var images = '<figure><img id="' +
-          photos[i].id + '" style="background-image: url(http://farm' +
-          photos[i].farm + '.static.flickr.com/' +
-          photos[i].server + '/' +
-          photos[i].id + '_' +
-          photos[i].secret + '.jpg)" src="static/assets/trans.gif" alt="' +
-          photos[i].title + '" /><figcaption>' +
-          photos[i].title + '</figcaption></figure>';
-      html += images;
+      html += flickr.createAnImage(photos[i]);
     }
     document.getElementById('images').innerHTML = html;
+  },
+
+  // create one figure
+  createAnImage: function (photo) {
+   return '<figure><img id="' +
+      photo.id + '" style="background-image: url(http://farm' +
+      photo.farm + '.static.flickr.com/' +
+      photo.server + '/' +
+      photo.id + '_' +
+      photo.secret + '.jpg)" src="static/assets/trans.gif" alt="' +
+      photo.title + '" /><figcaption>' +
+      photo.title + '</figcaption></figure>';
   }
 };
 
